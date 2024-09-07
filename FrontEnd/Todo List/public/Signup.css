@@ -1,0 +1,201 @@
+.signup-wrapper {
+    margin: 0;
+    padding: -100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 125vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgb(114, 2, 2), rgb(0, 0, 0));
+}
+
+.signup-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    width: 55vh;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    color: #0d0d0d;
+    font-size: 2rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.input, textarea {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input:focus, textarea:focus {
+    border-color: #8b0202;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: 0.3s ease-in-out;
+    color: #666;
+}
+
+.input:focus + label,
+.input:valid + label,
+textarea:focus + label,
+textarea:valid + label {
+    top: -20px;
+    left: 0;
+    color: #8b0202;
+    font-size: 0.8rem;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(135deg, rgb(114, 2, 2), rgb(0, 0, 0));
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, rgb(114, 23, 23), rgb(168, 84, 84));
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+    appearance: none; /* Hide default dropdown arrow */
+}
+
+select:focus {
+    border-color: #8b0202;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: 0.3s ease-in-out;
+    color: #666;
+    pointer-events: none; /* Prevent label from being clicked */
+}
+
+select:focus + label,
+select:valid + label {
+    top: -20px;
+    left: 0;
+    color: #8b0202;
+    font-size: 0.8rem;
+}
+
+select:focus + label {
+    color: #8b0202;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+select::-ms-expand {
+    display: none; /* Remove default dropdown arrow for IE */
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 0.8rem;
+    transition: 0.3s ease-in-out;
+}
+
+select:focus ~ .select-wrapper::after {
+    color: #8b0202;
+}
+
+span{
+    color: #8b0202;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .signup-container {
+        width: 90%;
+        padding: 2rem; /* Adjusted padding for consistency */
+    }
+
+    .input, textarea {
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.7rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
