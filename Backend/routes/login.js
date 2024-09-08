@@ -22,7 +22,7 @@ router.post("/",async (req,res)=>{
             const token = jwt.sign({username:username,password:password},process.env.SECRET_KEY);
             
             res.setHeader("set-cookie", token);
-            res.cookie('jwt',token);
+            res.cookie('jwt', token, { httpOnly: true, secure: true, sameSite: 'Strict' });
             console.log(token);
         }
 
