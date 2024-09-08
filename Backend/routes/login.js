@@ -25,6 +25,7 @@ router.post("/",async (req,res)=>{
                 sameSite: 'Strict',
                 maxAge: 1000000
              });
+            console.log(token);
         }
 
         res.status(200).json({
