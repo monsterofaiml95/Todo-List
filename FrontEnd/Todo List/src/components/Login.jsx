@@ -17,7 +17,12 @@ function Login(){
         const formDataObject = Object.fromEntries(formData.entries());
         const urlEncodedData = new URLSearchParams(formDataObject);
 
-        axios.post("https://todo-list-ku1v.onrender.com/login",urlEncodedData, { withCredentials: true })
+        axios.post("https://todo-list-ku1v.onrender.com/login",urlEncodedData,
+        headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Bearer ${token}`  // Add the JWT token here
+            },
+        { withCredentials: true })
         .then((resolve)=>{
             console.log(resolve.data.authorised);
             const authorised = resolve.data.authorised;
