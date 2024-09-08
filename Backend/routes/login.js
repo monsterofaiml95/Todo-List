@@ -17,6 +17,7 @@ router.post("/",async (req,res)=>{
     if(user){
         const userActualPassword = user.password;
         const authorised = await bcrypt.compare(password,userActualPassword);
+        console.log(authorised);
         if(authorised){
             const token = jwt.sign({username:username,password:password},process.env.SECRET_KEY);
             res.cookie('jwt',token, { 
