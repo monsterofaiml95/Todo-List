@@ -16,7 +16,7 @@ function Todos({todos, username, setTodos}){
     function deleted(e) {
         const id = e.currentTarget.getAttribute('data-id');
     
-        axios.delete(`http://localhost:3000/todos?username=${username}&id=${id}`)
+        axios.delete(`https://todo-list-eogs.onrender.com/todos?username=${username}&id=${id}`)
         .then(() => {
             setTodos(todos.filter((todo) => todo._id !== id));
             console.log("Todo Deleted");
@@ -27,7 +27,7 @@ function Todos({todos, username, setTodos}){
     function completed(e) {
         const id = e.currentTarget.getAttribute('data-id');
     
-        axios.put(`http://localhost:3000/todos?id=${id}`)
+        axios.put(`https://todo-list-eogs.onrender.com/todos?id=${id}`)
         .then(() => {
             setTodos(
                 todos.map((todo) =>

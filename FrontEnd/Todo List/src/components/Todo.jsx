@@ -13,11 +13,11 @@ function Todo(){
     const [loading,setLoading] = useState(true);
     
     useEffect(()=>{
-    axios.get("http://localhost:3000/login", { withCredentials: true })
+    axios.get("https://todo-list-eogs.onrender.com/login", { withCredentials: true })
     .then((resolve)=>{
         setLoading(false);
         setUsername(resolve.data.username);
-        axios.get(`http://localhost:3000/todos?username=${resolve.data.username}`)
+        axios.get(`https://todo-list-eogs.onrender.com/todos?username=${resolve.data.username}`)
         .then(async (response)=>{
             // console.log(response.data.todos);
             await setTodos(response.data.todos);
@@ -40,7 +40,7 @@ function Todo(){
         }
         const urlEncodedData = new URLSearchParams(newTodo);
 
-        axios.post(`http://localhost:3000/todos?username=${username}`,urlEncodedData)
+        axios.post(`https://todo-list-eogs.onrender.com/todos?username=${username}`,urlEncodedData)
         .then ((response) => {
             // Update state with the new todo from the response (including its _id)
             const savedTodo = response.data; // Assuming the backend returns the created todo object

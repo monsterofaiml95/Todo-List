@@ -10,7 +10,7 @@ function Signup() {
         const formDataObject = Object.fromEntries(formData.entries());
         const urlEncodedData = new URLSearchParams(formDataObject);
 
-      axios.post("http://localhost:3000/signup", urlEncodedData, { withCredentials: true })
+      axios.post("https://todo-list-eogs.onrender.com/signup", urlEncodedData, { withCredentials: true })
       .then((resolve)=>{
         console.log(resolve.data.msg);
       })

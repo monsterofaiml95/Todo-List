@@ -11,7 +11,7 @@ function Modal({ onClose, id ,setTodos,todos}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/todos/todo?id=${id}`);
+        const response = await axios.get(`https://todo-list-eogs.onrender.com/todos/todo?id=${id}`);
         setTitle(response.data.title);
         setDescription(response.data.description);
         setLoading(false); // Set loading to false once data is loaded
@@ -28,7 +28,7 @@ function Modal({ onClose, id ,setTodos,todos}) {
         title:title,
         description:description
     })
-    axios.put(`http://localhost:3000/todos/todo?id=${id}`,urlEncodedData)
+    axios.put(`https://todo-list-eogs.onrender.com/todos/todo?id=${id}`,urlEncodedData)
     .then(()=>{
         setTodos(todos.map(todo => {
               if (todo._id === id) {
