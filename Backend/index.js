@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URL)
 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // your React app origin
+    origin: 'https://todo-list-4t2509945-ishaan-sahus-projects.vercel.app/', // your React app origin
     credentials: true
 }));
 
