@@ -19,11 +19,7 @@ router.post("/",async (req,res)=>{
         const authorised = await bcrypt.compare(password,userActualPassword);
         if(authorised){
             const token = jwt.sign({username:username,password:password},process.env.SECRET_KEY);
-            res.cookie('jwt',token, { 
-                httpOnly: true, 
-                secure: true, 
-                sameSite: 'Strict',
-                maxAge: 1000000
+            res.cookie('jwt',token, { maxAge: 1000000
              });
         }
 
